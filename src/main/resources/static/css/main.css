@@ -1,0 +1,29 @@
+#process {
+    margin-left: 600px;
+    margin-top: 75px
+}
+
+.step {
+    width: 600px;
+    margin-right: 400px;
+    margin-left: 500px;
+    margin-top: 30px;
+}
+
+.step2bottom {
+    margin-left: 450px;
+}
+
+.stagebtn {
+    margin-left: 110px;
+    width: 150px;
+}
+
+.paylistfind {
+    margin-top: 9px
+}
+
+.step3btn{
+    margin-top: 50px;
+}
+

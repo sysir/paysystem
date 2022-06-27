@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>step01</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <link rel="stylesheet" href="./lib/layui/css/layui.css"/>
+    <link rel="stylesheet" href="./lib/layui/mods/extend/step/step.css"
+          tppabs="http://res.layui.com/layui/dist/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="step step1">
+    <div id="step1" style=""></div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">工资条名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入名称"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请选择月份</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="monthtime" placeholder="点击选择">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">文件导入</label>
+        <div class="layui-input-block">
+            <div class="layui-upload-drag" id="uploadexcel">
+                <i class="layui-icon"></i>
+                <p>点击上传，或将文件拖拽到此处</p>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal stagebtn" id="step1next">确认
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="step2">
+    <div id="step2" class="step"></div>
+    <div class="layui-card-body ">
+        <table class="layui-table layui-form">
+            <thead>
+            <tr>
+                <th>年/月</th>
+                <th>Excel名称</th>
+                <th>发放金额</th>
+                <th>已发送</th>
+                <th>已查看</th>
+                <th>已确认</th>
+                <th>反馈人数</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    2020/1
+                </td>
+                <td>2017009171822298053</td>
+                <td>老王:18925139194</td>
+                <td>7829.10</td>
+                <td>7854.10</td>
+                <td>待确认</td>
+                <td>未发货</td>
+                <td>2017-08-17 18:22</td>
+                <td class="td-manage">
+                    <!--<a title="查看" onclick="xadmin.open('编辑','order-view.html')" href="javascript:;">
+                        <i class="layui-icon">&#xe63c;</i></a>-->
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                        <i class="layui-icon">&#xe640;</i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2020/1
+                </td>
+                <td>2017009171822298053</td>
+                <td>老王:18925139194</td>
+                <td>7829.10</td>
+                <td>7854.10</td>
+                <td>待确认</td>
+                <td>未发货</td>
+                <td>2017-08-17 18:22</td>
+                <td class="td-manage">
+                    <!--<a title="查看" onclick="xadmin.open('编辑','order-view.html')" href="javascript:;">
+                        <i class="layui-icon">&#xe63c;</i></a>-->
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                        <i class="layui-icon">&#xe640;</i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2020/1
+                </td>
+                <td>2017009171822298053</td>
+                <td>老王:18925139194</td>
+                <td>7829.10</td>
+                <td>7854.10</td>
+                <td>待确认</td>
+
+                <td>未发货</td>
+                <td>2017-08-17 18:22</td>
+                <td class="td-manage">
+                    <!--<a title="查看" onclick="xadmin.open('编辑','order-view.html')" href="javascript:;">
+                        <i class="layui-icon">&#xe63c;</i></a>-->
+                    <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                        <i class="layui-icon">&#xe640;</i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="layui-form-item step2bottom">
+
+
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal stagebtn" id="step2back">上一步
+            </button>
+        </div>
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal stagebtn" id="step2next">核对无误
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="step step3">
+    <div id="step3" style=""></div>
+    <div class="layui-form-item" pane="">
+        <label class="layui-form-label">工资标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">文本域</label>
+        <div class="layui-input-block">
+            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form layui-form-item" pane="">
+        <label class="layui-form-label">发布方式</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="" lay-skin="switch" lay-text="立即发布|定时发布" checked>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">显示设置</label>
+        <div class="layui-input-block" id="showmore">
+        </div>
+    </div>
+    <div class="layui-form-item step3btn">
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal stagebtn" id="step3back">上一步
+            </button>
+        </div>
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn layui-btn-radius layui-btn-normal stagebtn" id="step3next">确认发布
+            </button>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: './lib/layui/mods/extend/step/'
+    }).use(['step', 'laydate', 'form', 'layer', 'upload', 'tree'], function () {
+        var $ = layui.jquery
+            , upload = layui.upload
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , form = layui.form
+            , tree = layui.tree
+
+
+        //拖拽上传
+        var uploadInst = upload.render({
+            elem: '#uploadexcel' //绑定元素
+            , url: '/uploadexcel/' //上传接口
+            , method: 'POST'
+            , field: 'file'
+            , exts: 'xls|xlsx'
+            , multiple: false
+            , acceptMime: 'application/vnd.ms-excel,application/' +
+                'vnd.openxmlformats-officedocument.spreadsheetml.sheet'//限制文件类型
+            , done: function (res) {
+                //上传完毕回调
+                layer.msg(res.msg, {
+                    icon: 5,
+                    time: 1000
+                });
+            }
+            , error: function () {
+                //请求异常回调
+                layer.msg(res.msg, {
+                    icon: 5,
+                    time: 1000
+                });
+            }
+        });
+
+        //年月选择器
+        laydate.render({
+            elem: '#monthtime'
+            , type: 'month'
+            , btns: ['confirm']
+        });
+
+
+        var step1 = layui.step
+            , step1data = {
+            steps: [{"title": "上传工资表", "time": ""},
+                {"title": "核对工资表", "time": ""},
+                {"title": "发放工资表", "time": ""}]
+            , current: 1
+        };
+        step1.ready({
+            elem: '#step1',
+            data: step1data,
+            width: '150px',
+            color: {
+                success: 'green',
+                error: 'red'
+            }
+        });
+
+        var step2 = layui.step
+            , step2data = {
+            steps: [{"title": "上传工资表", "time": ""},
+                {"title": "核对工资表", "time": ""},
+                {"title": "发放工资表", "time": ""}]
+            , current: 2
+        };
+        step2.ready({
+            elem: '#step2',
+            data: step2data,
+            width: '150px',
+            color: {
+                success: 'green',
+                error: 'red'
+            }
+        });
+
+        var step3 = layui.step
+            , step3data = {
+            steps: [{"title": "上传工资表", "time": ""},
+                {"title": "核对工资表", "time": ""},
+                {"title": "发放工资表", "time": ""}]
+            , current: 3
+        };
+        step3.ready({
+            elem: '#step3',
+            data: step3data,
+            width: '150px',
+            color: {
+                success: 'green',
+                error: 'red'
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function (data) {
+            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //模拟数据2
+        //开启复选框
+        tree.render({
+            elem: '#showmore'
+            , data: [{
+                title: '工资项1'
+                , id: 1
+            }, {
+                title: '工资项2'
+                , id: 2
+                , checked: true
+            }, {
+                title: '工资项3'
+                , id: 3
+            }, {
+                title: '工资项4'
+                , id: 4
+            }]
+            , showCheckbox: true
+            , showLine: false
+        });
+
+
+    })
+
+
+    $(document).ready(function () {  //当网页加载完成，开始执行
+        $(".step1").css({"display": "block"});
+        $(".step2").css({"display": "none"});
+        $(".step3").css({"display": "none"});
+        // 注册分步实现
+        $('#step1next').click(function () {  //点击step1区块的下一步按钮，隐藏step1，显示step2
+            $(".step1").css({"display": "none"});
+            $(".step2").css({"display": "block"});
+            $(".step3").css({"display": "none"});
+        });
+        $('#step2back').click(function () {  //点击step2区块的返回按钮，隐藏step2，显示step1
+            $(".step1").css({"display": "block"});
+            $(".step2").css({"display": "none"});
+            $(".step3").css({"display": "none"});
+        });
+        $('#step2next').click(function () {  //点击step2区块的下一步按钮，隐藏step2，显示step3
+            $(".step1").css({"display": "none"});
+            $(".step2").css({"display": "none"});
+            $(".step3").css({"display": "block"});
+        });
+        $('#step3back').click(function () { //点击step3区块的返回按钮，隐藏step3，显示step2
+            $(".step1").css({"display": "none"});
+            $(".step2").css({"display": "block"});
+            $(".step3").css({"display": "none"});
+        });
+
+
+    });
+</script>
+
+</body>
+</html>
